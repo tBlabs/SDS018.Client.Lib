@@ -2,9 +2,9 @@ import { ISensorConnector } from "../Connectors/ISensorConnector";
 
 export class Sensor
 {
-    private pm10!: number;
-    private pm25!: number;
-    private onChangeCallback!: (pm10: number, pm25: number) => void;
+    private pm10: number = (-1);
+    private pm25: number = (-1);
+    private onChangeCallback: (pm10: number, pm25: number) => void = () => {};
 
     public get Pm10(): number
     {

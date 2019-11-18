@@ -1,7 +1,7 @@
 {
-    "name": "sds018-client-lib",
+    "name": "air-pollution-sensor-client-lib",
     "version": "1.0.0",
-    "description": "remote driver for bluepill board",
+    "description": "Remote client for SDS018 air quality sensor",
     "main": "./bin/index.js",
     "author": "tB",
     "license": "beerware",
@@ -12,10 +12,10 @@
     "types": "./bin/index.d.ts",
     "scripts": {
         "xpreinstall": "sudo npm i -g typescript jest tslint npm-run-all",
-        "start": "node ./bin/startup.js",
+        "start": "node ./bin/TestApps/sample.app.js",
         "run": "npm run clean && npm run build && clear && npm run start",
         "watch": "tsc --watch",
-        "monitor": "nodemon ./bin/startup.js",
+        "monitor": "nodemon ./bin/TestApps/sample.app.js",
         "serve": "npm run clean && run-p watch monitor",
         "lint": "tslint -c tslint.json './src/**/*.{ts,tsx}' --format msbuild",
         "test": "jest --runInBand",
@@ -29,6 +29,8 @@
         "@types/jasmine": "^2.6.3",
         "@types/jest": "^21.1.6",
         "@types/node": "^7.0.18",
+        "@types/socket.io-client": "^1.4.32",
+        "jasmine-core": "^2.6.1",
         "jest": "^21.2.1",
         "moq.ts": "^2.7.3",
         "nodemon": "^1.12.1",
@@ -38,8 +40,6 @@
         "typescript": "^2.6.2"
     },
     "dependencies": {
-        "@types/socket.io-client": "^1.4.32",
-        "jasmine-core": "^2.6.1",
         "socket.io-client": "^2.1.1"
     }
 }

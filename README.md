@@ -5,7 +5,7 @@ TODO
 
 # SDS018.Client.Lib
 
-It is a client for a **SDS018 Air quality sensor** in a form of library.  
+This is a client for a **SDS018 Air quality sensor** in a form of library.  
 It is distributed as a node package with TypeScript types definitions.  
 Socket connector included.
 
@@ -13,16 +13,20 @@ Socket connector included.
 
 `npm i sds018-client-lib`
 
+## Development
+
+`npm run serve` is not working. Use `tsc ; npm start` instead;
+
 ## Import
 
-`import { SDS018Sensor, SDS018Socketconnector} from 'sds018-client-lib/bin';` // TODO: remove `/bin`
+`import { SDS018Sensor, SDS018SocketConnector} from 'sds018-client-lib/bin';` // TODO: remove `/bin`
 
 ## Usage
 
 ```
 const connectionString = "http://192.168.1.100:3005";
-const sensorConnector: ISensorConnector = new SDS018SocketConnector(connectionString);
-const sensor: Sensor = new Sensor(sensorConnector);
+const sensorConnector = new SDS018SocketConnector(connectionString);
+const sensor = new Sensor(sensorConnector);
 
 sensor.OnChange((pm25, pm10) =>
 {
