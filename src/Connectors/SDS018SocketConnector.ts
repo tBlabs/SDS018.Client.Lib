@@ -3,7 +3,7 @@ import SocketIoClient from 'socket.io-client';
 
 export class SDS018SocketConnector implements ISensorConnector
 {
-    private socket: SocketIoClient.Socket;
+    private socket;
 
     public OnUpdate: (pm10: number, pm25: number) => void = () => { };
 
